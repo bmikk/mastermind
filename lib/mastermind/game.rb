@@ -184,37 +184,3 @@ class Game
   end
 
 end
-
-
-#ideally, how should the gameplay logic be structured?
-
-#ready to play a game? Y/N
-  #if no, exit
-  #if yes, continue
-#What is your name?
-  #set player with input name, continue
-#Would you like to be the Code Breaker? (Y/N)
-  #set course according to input, either the code breaker logic or code maker logic.
-
-#Code Breaker Logic
-  #create a new board with the computer setting the master code.
-  #prompt human player for a guess
-  #compare that guess with the master code
-    #for each exact match, assign an X
-    #for each partial match, assign an O if not already represented by an X or O
-    #assign nothing for each miss
-  #if all 4 colors are guessed correctly, declare a winner and end the game.
-  #if not all guessed correctly and turn limit is not reached, continue.
-  #if not all guessed correctly and turn limit IS reached, end the game and declare a loss.
-
-#Code Maker Logic
-  #create a new board with the human player setting the master code.
-  #ask player if they are ready for computer to start guessing
-  #if yes, run a computer guess:
-    #have computer pick a random combination of colors for the first guess
-    #compare the computer guess
-      #for each exact match, the computer will remember it and make that same guess for the rest of the round.
-      #for each 0, have the computer remember remember to use that color in a different slot, but not in that exact slot in the next guess.
-      #for each miss, have the computer remember and make sure it does not use that color at all in any more guesses.
-  #if computer did not win, prompt the player if they are ready for the computer to take its next turn
-  #repeat until there is either a winner or loser.
